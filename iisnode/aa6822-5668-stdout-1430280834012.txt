@@ -1,0 +1,12 @@
+http://ouimedia-ghost.azurewebsites.net
+[36mMigrations[39m[36m:[39m [36mUp to date at version 003[39m
+[32mGhost is running...[39m 
+Your blog is now available on http://ouimedia-ghost.azurewebsites.net [90m
+Ctrl+C to shut down[39m
+123.176.115.60:53129 - - [29/Apr/2015:04:14:34 +0000] "GET /favicon.ico HTTP/1.1" 200 - "http://ouimedia-ghost.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36"
+123.176.115.60:53129 - - [29/Apr/2015:04:15:03 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36"
+123.176.115.60:53129 - - [29/Apr/2015:04:15:03 +0000] "GET /assets/css/screen.css?v=0a2be97d2d HTTP/1.1" 200 - "http://ouimedia-ghost.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36"
+123.176.115.60:53164 - - [29/Apr/2015:04:15:03 +0000] "GET /assets/js/index.js?v=0a2be97d2d HTTP/1.1" 200 - "http://ouimedia-ghost.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36"
+123.176.115.60:53163 - - [29/Apr/2015:04:15:03 +0000] "GET /assets/js/jquery.fitvids.js?v=0a2be97d2d HTTP/1.1" 200 - "http://ouimedia-ghost.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36"
+123.176.115.60:42656 - - [29/Apr/2015:04:15:03 +0000] "GET /public/jquery.min.js?v=0a2be97d2d HTTP/1.1" 200 - "http://ouimedia-ghost.azurewebsites.net/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36"
+123.176.115.60:42656 - - [29/Apr/2015:04:15:04 +0000] "GET /assets/fonts/casper-icons.woff HTTP/1.1" 200 2580 "http://ouimedia-ghost.azurewebsites.net/assets/css/screen.css?v=0a2be97d2d" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36"
