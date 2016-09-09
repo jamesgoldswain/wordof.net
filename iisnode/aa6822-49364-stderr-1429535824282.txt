@@ -1,4 +1,0 @@
-[31m
-ERROR:[39m [31mError: Authentication required, invalid details provided[39m 
- [37mUnable to send welcome email, your blog will continue to function.[39m 
- [32mPlease see http://support.ghost.org/mail/ for instructions on configuring email.[39m 
