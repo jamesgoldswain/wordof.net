@@ -17,6 +17,20 @@
         display: grid;
         place-items: center;
       }
+      #article {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        max-width: 60%;
+      }
+      #posts {
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        height: 100vh;
+        width: 10%;
+      }
     </style>
   </head>
   <body>
@@ -25,16 +39,57 @@
         <h1>Wordof .net - random things about this and that!</h1>
       </header>
       <main role="main">
-        <article>
+        <ul id="posts">
+          <li><a class="postLink" href="#">🍕Learning the fun way</a></li>
+          <li><a class="postLink" href="#">Learning the fun way</a></li>
+          <li><a class="postLink" href="#">Learning the fun way copy</a></li>
+          <li><a class="postLink" href="#">Learning the fun way</a></li>
+          <li><a class="postLink" href="#">Learning the fun way</a></li>
+          <li><a class="postLink" href="#">Learning the fun way copy</a></li>
+          <li><a class="postLink" href="#">Learning the fun way</a></li>
+          <li><a class="postLink" href="#">Learning the fun way</a></li>
+          <li><a class="postLink" href="#">Learning the fun way copy</a></li>
+          <li><a class="postLink" href="#">Learning the fun way</a></li>
+          <li><a class="postLink" href="#">Learning the fun way</a></li>
+          <li><a class="postLink" href="#">Learning the fun way copy</a></li>
+        </ul>
+        <article id="article">
           
         </article>
-        <ul id="posts">
-          <li></li>
-        </ul>
       </main>
       <footer>
         Any opinions on this site are my own and any likeness of characters here-in are purely co-incidental, no blog posts were harmed in the creation of this blog
       </footer>
     </div>
+    <script type="text/javascript">
+
+    var anchors = document.getElementsByClassName("postLink");
+    let articleLocation = "articles";
+
+    for (var i = 0, length = anchors.length; i < length; i++) {
+      var anchor = anchors[i];
+      anchor.addEventListener('click', function(event) {
+        fetch(`/${articleLocation}/${event.target.innerHTML.replace(/\s+/g, '-').toLowerCase()}.html`)
+          .then(function (response) {
+              switch (response.status) {
+                  // status "OK"
+                  case 200:
+                      return response.text();
+                  // status "Not Found"
+                  case 404:
+                      throw response;
+              }
+          })
+          .then(function (template) {
+            document.getElementById('article').innerHTML = template;
+          })
+          .catch(function (response) {
+              // "Not Found"
+              console.log(response.statusText);
+          });
+          event.preventDefault();
+      }, true);
+    };
+    </script>
   </body>
 </html>
