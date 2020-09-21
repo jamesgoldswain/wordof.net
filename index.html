@@ -12,24 +12,33 @@
       body {
         font-family: 'Open Sans', sans-serif;
       }
-      #container {
-        height: 100vh;
+      header {
         display: grid;
         place-items: center;
+      }
+      footer {
+        display: grid;
+        place-items: center;
+        font-size: 0.75rem;
+        font-weight: 700;
       }
       #article {
         margin-left: auto;
         margin-right: auto;
         width: 60%;
         max-width: 60%;
+        min-height: 70vh;
+        display: grid;
+        place-items: center;
       }
-      #posts {
-        position: absolute;
-        left: 0;
-        top: 0;
-        overflow: hidden;
-        height: 100vh;
-        width: 10%;
+      #article .loading {
+        font-size: 5rem;
+
+      }
+      #container {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        height: 90vh;
       }
     </style>
   </head>
@@ -38,20 +47,12 @@
       <header>
         <h1>Wordof .net - random things about this and that!</h1>
       </header>
+      
       <main role="main">
         <ul id="posts">
-          <li><a class="postLink" href="#">🍕Learning the fun way</a></li>
-          <li><a class="postLink" href="#">Learning the fun way</a></li>
-          <li><a class="postLink" href="#">Learning the fun way copy</a></li>
-          <li><a class="postLink" href="#">Learning the fun way</a></li>
-          <li><a class="postLink" href="#">Learning the fun way</a></li>
-          <li><a class="postLink" href="#">Learning the fun way copy</a></li>
-          <li><a class="postLink" href="#">Learning the fun way</a></li>
-          <li><a class="postLink" href="#">Learning the fun way</a></li>
-          <li><a class="postLink" href="#">Learning the fun way copy</a></li>
-          <li><a class="postLink" href="#">Learning the fun way</a></li>
-          <li><a class="postLink" href="#">Learning the fun way</a></li>
-          <li><a class="postLink" href="#">Learning the fun way copy</a></li>
+          <li><span>🍕</span><a class="postLink" href="#">Learning the fun way</a></li>
+          <li><span>🍕</span><a class="postLink" href="#">Learning the fun way</a></li>
+          <li><span>🍕</span><a class="postLink" href="#">Learning the fun way copy</a></li>
         </ul>
         <article id="article">
           
@@ -64,12 +65,18 @@
     <script type="text/javascript">
 
     var anchors = document.getElementsByClassName("postLink");
-    let articleLocation = "articles";
+    let articleLocation = "/articles";
 
     for (var i = 0, length = anchors.length; i < length; i++) {
       var anchor = anchors[i];
       anchor.addEventListener('click', function(event) {
-        fetch(`/${articleLocation}/${event.target.innerHTML.replace(/\s+/g, '-').toLowerCase()}.html`)
+
+        document.getElementById('article').innerHTML = `<span class="loading">⏱</span>`;
+
+        let linkText = event.target.innerText.replace(/\s+/g, '-').toLowerCase();
+        let blogUrl = `${articleLocation}/${linkText}.html`;
+   
+        fetch(blogUrl)
           .then(function (response) {
               switch (response.status) {
                   // status "OK"
